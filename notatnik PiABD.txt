@@ -1,8 +1,41 @@
-funkcja min znajduje minimalna wartosc
-funkcja max znajduje maksymalna wartosc
+polecenia:
+
+(polecenia baz danych i servera)
+
+  mysqladmin -u root shutdown;
+to polecenie potrafi wylaczyc server
+
+  mysqld --console
+uruchomienie serwera mysql jako oddzielna aplikacje 
+
+  net stop nazwa_uslugi
+zatrzymanie uslugi
+
+
+  mysql -u root --password=haslo
+  mysql -u root -phaslo
+ustawienie hasla
+
+  quit
+skonczenie polaczenia z serwerem
 
   mysql -u root -p 
 zalogowanie sie do roota na powershell
+
+  create database nazwa_bazy;
+stworzenie bazy danych
+
+  drop database;
+usuwanie bazy danych
+
+  delete database;
+usuwanie rekordow w bazie danych
+
+  use database;
+uzywanie danej baz danych
+
+  mysql -u nazwa_uzytkownika -phaslo nazwa_bazy
+wejscie odrazu do bazy danych
 
   show databases;
 pokazuje bazy danych ktore mamy
@@ -10,6 +43,3 @@ pokazuje bazy danych ktore mamy
   show tables;
 pokazuje kolumny w tabeli
 
-  primary key
-oznacza ze kolumna jest unikalna
-  
