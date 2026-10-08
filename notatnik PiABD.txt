@@ -1,2 +1,4 @@
 funkcja min znajduje minimalna wartosc
 funkcja max znajduje maksymalna wartosc
+
+uyu
