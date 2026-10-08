@@ -1,4 +1,15 @@
 funkcja min znajduje minimalna wartosc
 funkcja max znajduje maksymalna wartosc
 
-uyu
+  mysql -u root -p 
+zalogowanie sie do roota na powershell
+
+  show databases;
+pokazuje bazy danych ktore mamy
+
+  show tables;
+pokazuje kolumny w tabeli
+
+  primary key
+oznacza ze kolumna jest unikalna
+  
