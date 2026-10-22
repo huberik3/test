@@ -1,0 +1,16 @@
+imie i naziwsko ucznia w jednej kolumnie:
+  SELECT id,
+    CONCAT(imie, ' ', nazwisko) AS uczen
+  FROM uczniowie;
+
+wyswietl imiona uczniow wielkimi literami:
+  SELECT id,
+    UPPER(imie) AS imie_duzymi_literami,
+    nazwisko
+  FROM uczniowie;
+
+wyswietl uczniow urodzonych w czerwcu
+  SELECT imie, nazwisko, data_urodzenia
+  FROM uczniowie
+  WHERE MONTH(data_urodzenia)
+  ORDER BY data_urodzenia;
