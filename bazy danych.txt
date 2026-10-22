@@ -1,4 +1,4 @@
-imie i naziwsko ucznia w jednej kolumnie:
+wyswietl imie i naziwsko ucznia w jednej kolumnie:
   SELECT id,
     CONCAT(imie, ' ', nazwisko) AS uczen
   FROM uczniowie;
@@ -14,3 +14,48 @@ wyswietl uczniow urodzonych w czerwcu
   FROM uczniowie
   WHERE MONTH(data_urodzenia) = 6
   ORDER BY data_urodzenia;
+
+znajdz uczniow urodzonych w czerwcu oraz grudni/
+znajdz uczniow urodzonych w czerwcu lub grudniu
+  SELECT imie, nazwisko, data_urodzenia
+  FROM uczniowie
+  WHERE MONTH(data_urodzenia) IN (6, 12)
+  ORDER BY data_urodzenia;
+
+
+Oblicz wiek kazdego ucznia
+  SELECT imie,
+    nazwisko
+    data_urodzenia
+    TIMESTAMPDIFF(
+      YEAR,
+      data_urodzenia,
+      CURDATE()
+    ) AS wiek
+  FROM uczniowie
+  ORDER BY wiek DESC;
+
+
+wyswietl uczniow, ktorych adres email zawiera "kowalski"
+  SELECT imie, nazwisko, email
+  FROM uczniowie
+  WHERE email LIKE "%kowalski%"
+
+
+wyswietl najstarszego oraz najmlodszego ucznia wedlug daty urodzenia
+  SELECT MIN(data_urodzenia) AS najstarszy,
+    MAX(data_urodzenia) AS najmlodszy
+  FROM uczniowie;
+
+
+wyswietl uczniow ktorzy mieszkaja w najliczniej mieszkajacej miejscowosci
+SELECT imie, nazwisko, miejscowosc
+FROM uczniowier;
+WHERE miejscowosc * (
+  SELECT miejscowosc
+  FROM uczniowie
+  GROUP BY miejscowosc
+  ORDER BY COUNT(*) DESC, miejscowosc ASC
+  LIMIT 1
+)
+ORDER BY nazwisko, imie;
