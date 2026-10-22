@@ -12,5 +12,5 @@ wyswietl imiona uczniow wielkimi literami:
 wyswietl uczniow urodzonych w czerwcu
   SELECT imie, nazwisko, data_urodzenia
   FROM uczniowie
-  WHERE MONTH(data_urodzenia)
+  WHERE MONTH(data_urodzenia) = 6
   ORDER BY data_urodzenia;
