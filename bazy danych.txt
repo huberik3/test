@@ -59,3 +59,29 @@ WHERE miejscowosc * (
   LIMIT 1
 )
 ORDER BY nazwisko, imie;
+
+
+wyswietl 3 ostatnie cyfry numeru telefonu kazdego ucznia
+SELECT imie, nazwisko,
+  RIGHT(telefon, 3) AS koncowka_telefonu
+FROM uczniowie
+ORDER BY nazwisko;
+
+wyswietl 3 pierwsze cyfry numeru telefonu kazdego ucznia
+SELECT imie, nazwisko,
+  LEFT(telefon, 3) AS uczniowie_orange
+FROM uczniowie
+ORDER BY nazwisko;
+
+ 
+wyswietl naziwska uczniow zapisane mamlymi litermi
+SELECT imie
+  LOWER(naziwsko) AS naziwsko_z_małych_liter
+FROM uczniowie;
+
+
+wyswietl uczniow urodzonych w pierwszym kwartale roku
+SELECT imie, nazwiko, data_urodzenia
+FROM uczniowie
+WHERE MONTH(data_urodzenia) BEETWEEEN 1 AND 3
+ORDER BY data_urodzenia;
